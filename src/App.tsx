@@ -11,7 +11,7 @@ function App() {
       auth_service: 'ramper',
       authConfig: { appName: 'Leap near board',  theme: 'dark'}  
     })
-
+    await sdk?.auth?.connect();
     const signedData =  await sdk?.auth?.getUser();
     setResponse(JSON.stringify(signedData, null, 2));
   }
