@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import LeapNearSDKService from './services/LeapNearSDKService';
+import { Playground } from './components/Playground';
+
 
 function App() {
 
@@ -29,15 +31,14 @@ function App() {
         <div>
           <button onClick={createWalletUsingRamper} value="Create wallet using Ramper"> Create wallet using Ramper </button>
         </div>
-        <div>  
+        <div>
           <button onClick={createWalletUsingWeb3auth} value="Create wallet using Web3Auth"> Create wallet using Web3Auth </button>
         </div>
       </div>
-      <pre style={{textAlign: 'left', background: '#ededed'}}>
+      <pre style={{ textAlign: 'left', background: '#ededed' }}>
         {response}
       </pre>
-      <div>
-      </div>
+      <Playground sdk={sdkInstance} user={ response ? JSON.parse(response) : null}/>
     </div>
   );
 }
