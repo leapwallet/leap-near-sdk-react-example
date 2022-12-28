@@ -5,14 +5,19 @@ import LeapNearSDKService from './services/LeapNearSDKService';
 function App() {
 
   const [response, setResponse] = useState<any>('');
+  const [sdkInstance, setSdkInstance] = useState<any>(null);
   const createWalletUsingRamper = async () => {
-    const signedData =  await LeapNearSDKService.openRamper();
+    const { sdk, signedData } =  await LeapNearSDKService.openRamper();
     setResponse(JSON.stringify(signedData, null, 2));
+    setSdkInstance(sdk);
+
   }
 
   const createWalletUsingWeb3auth = async () => {
-    const signedData =  await LeapNearSDKService.openWeb3Auth();
+    const { sdk, signedData } =  await LeapNearSDKService.openWeb3Auth();
     setResponse(JSON.stringify(signedData, null, 2));
+    setSdkInstance(sdk);
+
   }
 
   return (
@@ -31,6 +36,8 @@ function App() {
       <pre style={{textAlign: 'left', background: '#ededed'}}>
         {response}
       </pre>
+      <div>
+      </div>
     </div>
   );
 }

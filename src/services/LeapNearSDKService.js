@@ -10,7 +10,7 @@ export default {
 
         await sdk?.auth?.connect()
         const signedData =  await sdk?.auth?.getUser();
-        return signedData;
+        return { sdk, signedData };
     },
 
     async openRamper() {
@@ -21,6 +21,6 @@ export default {
 
         await sdk?.auth?.connect()
         const signedData =  await sdk?.auth?.getUser();
-        return signedData;
+        return { sdk, signedData };;
     }  
 }
