@@ -1,6 +1,6 @@
 const sendResponse = (data) => {
     console.log(data);
-    window.ANDROID && window.ANDROID.PostMessage(JSON.stringify(data));
+    window.ReactNativeWebView && window.ReactNativeWebView.PostMessage(JSON.stringify(data));
 }
 
 export default {
