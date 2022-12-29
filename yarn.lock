@@ -2304,10 +2304,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@leapwallet/leap-near-sdk@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@leapwallet/leap-near-sdk/-/leap-near-sdk-1.0.5.tgz#7d6b4d119478680a24b0c647a35aeeb166e40531"
-  integrity sha512-4r4j/W7/UcRbhAD0IrJRT31IvNCab+NYop3JX7hbghngloER9aCKL87mNiWB1v2J/a4FVm+V962kN37BBfVmWQ==
+"@leapwallet/leap-near-sdk@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@leapwallet/leap-near-sdk/-/leap-near-sdk-1.0.7.tgz#f663517726dae6c23ff578fdbc6555235fe96e68"
+  integrity sha512-XJUvaNycttsbih8p9n168KJHYqURCsGwp+Rq78+xMFICtjeZ2s8GKUZpaTo6rNg5jOkfOVKovkE+4sD8d8mbig==
   dependencies:
     "@ramper/near" "^0.0.30"
     "@solana/web3.js" "^1.70.3"
