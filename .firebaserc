@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "leap-near-sdk-example"
+  },
+  "targets": {
+    "leap-near-sdk-example": {
+      "hosting": {
+        "production": [
+          "leap-near-sdk-example"
+        ],
+        "staging": [
+          "dev-leap-near-sdk-example"
+        ]
+      }
+    }
   }
 }
