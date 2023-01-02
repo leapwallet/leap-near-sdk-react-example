@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.13.0'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@leapwallet'
       - name: 📥 Install Deps
         run: yarn install
       - name: 🏗️ Build
