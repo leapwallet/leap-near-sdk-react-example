@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "CI=false && react-app-rewired build",
     "deploy": "yarn build && firebase deploy --only hosting",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
