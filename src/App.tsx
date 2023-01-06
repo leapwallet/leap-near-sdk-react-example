@@ -8,24 +8,37 @@ function App() {
 
   const [response, setResponse] = useState<any>('');
   const [sdkInstance, setSdkInstance] = useState<any>(null);
+  const [currentNetwork, setCurrentNetwork] = useState<any>('mainnet');
   const createWalletUsingRamper = async () => {
-    const { sdk, signedData } =  await LeapNearSDKService.openRamper();
+    const { sdk, signedData } =  await LeapNearSDKService.openRamper(currentNetwork);
     setResponse(JSON.stringify(signedData, null, 2));
     setSdkInstance(sdk);
 
   }
 
   const createWalletUsingWeb3auth = async () => {
-    const { sdk, signedData } =  await LeapNearSDKService.openWeb3Auth();
+    console.log({ currentNetwork })
+    const { sdk, signedData } =  await LeapNearSDKService.openWeb3Auth(currentNetwork);
     setResponse(JSON.stringify(signedData, null, 2));
     setSdkInstance(sdk);
+  }
 
+  const handleNetworkChange   = (e: any) => {
+    setCurrentNetwork(e.target.value);
+    setSdkInstance(null);
+    setResponse('');  
   }
 
   return (
     <div className="App">
       <header className="App-header">
         Leap Near SDK Example
+        <div>
+          <select name="network" id="" onChange={handleNetworkChange} value={currentNetwork}>
+            <option value="testnet">Testnet</option>
+            <option value="mainnet" defaultChecked>Mainnet</option>
+          </select>
+        </div>
       </header>
       <div>
         <div>

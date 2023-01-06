@@ -1,11 +1,12 @@
-import {LeapNearSdk} from '@leapwallet/leap-near-sdk'
+import {LeapNearSdk } from '@leapwallet/leap-near-sdk'
 
 export default {
 
-    async openWeb3Auth() {
+    async openWeb3Auth(networkId) {
         const sdk = await LeapNearSdk.init({ 
             auth_service: 'web3auth',
-            authConfig: { appName: 'Leap near sdk example',  theme: 'dark'}  
+            authConfig: { appName: 'Leap near sdk example',  theme: 'dark'},
+            networkId
         })
 
         await sdk?.auth?.connect()
@@ -13,10 +14,11 @@ export default {
         return { sdk, signedData };
     },
 
-    async openRamper() {
+    async openRamper(networkId) {
         const sdk = await LeapNearSdk.init({ 
             auth_service: 'ramper',
-            authConfig: { appName: 'Leap near sdk example',  theme: 'dark'}  
+            authConfig: { appName: 'Leap near sdk example',  theme: 'dark'}  ,
+            networkId
         })
 
         await sdk?.auth?.connect()
